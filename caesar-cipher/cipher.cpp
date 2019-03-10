@@ -16,6 +16,8 @@ namespace cipher {
 
 	char encrypt_letter(char letter, int key) {
 		int encode_index = 0;
+		bool upper = std::isupper(letter);
+
 		// Perform lookup for encoded letter.
 		for (size_t i = 0; i < letters.size(); i++) {
 			if (letters[i] == std::tolower(letter)) {
@@ -29,11 +31,13 @@ namespace cipher {
 				break;
 			}
 		}
-		return letters[encode_index];
+		char encoded = letters[encode_index];
+		return upper ? std::toupper(encoded) : encoded;
 	}
 
 	char decrypt_letter(char letter, int key) {
 		int decode_index = 0;
+		bool upper = std::isupper(letter);
 
 		// Perform lookup for decoded letter.
 		for (size_t i = 0; i < letters.size(); i++) {
@@ -48,7 +52,8 @@ namespace cipher {
 				break;
 			}
 		}
-		return letters[decode_index];
+		char decoded = letters[decode_index];
+		return upper ? std::toupper(decoded) : decoded;
 	}
 
 	void encrypt(std::string msg, int key) {
@@ -68,7 +73,7 @@ namespace cipher {
 
 		// Display encoded message.
 		std::string encoded(msg_copy.begin(), msg_copy.end());
-		std::cout<< encoded << "\n";
+		std::cout<< encoded << "\n\n";
 	}
 
 	void decrypt(std::string msg, int key) 	{
@@ -88,6 +93,6 @@ namespace cipher {
 
 		// Display decoded message.
 		std::string decoded(msg_copy.begin(), msg_copy.end());
-		std::cout << decoded << "\n";
+		std::cout << decoded << "\n\n";
 	}
 }
