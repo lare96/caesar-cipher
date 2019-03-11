@@ -7,10 +7,11 @@
 *.userosscache
 *.sln.docstates
 *.rc
-*.vcxproj
-*.vcxproj.filters
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+*.sln
+*.vcxproj
+*.vcxproj.filters
 
 # Build results
 [Dd]ebug/
