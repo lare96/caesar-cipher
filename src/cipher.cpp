@@ -9,7 +9,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "pch.h"
 
 namespace cipher {
 

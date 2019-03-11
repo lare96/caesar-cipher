@@ -9,7 +9,6 @@
 #include <string>
 #include <thread>
 #include "cipher.h"
-#include "pch.h"
 using namespace std;
 using namespace cipher;
 
@@ -86,8 +85,7 @@ int main() {
         }
       } else {
         // Invalid input, wait one second and ask for input again.
-        cout << "ERROR: Input must either be (e) for encrypt, or (d) for " cout
-             << "ERROR: Input must either be (e) for encrypt, or (d) for "
+        cout << "ERROR: Input must either be (e) for encrypt, or (d) for "
                 "decrypt.\n\n\n";
         this_thread::sleep_for(1s);
       }
